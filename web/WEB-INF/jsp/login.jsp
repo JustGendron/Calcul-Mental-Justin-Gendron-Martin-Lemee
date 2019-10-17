@@ -13,7 +13,7 @@
 	<body>
 		<div class="callout large primary">
 			<div class="row column text-center">
-				<h1>Gestion des salariés - Login</h1>
+				<h1>Calcul Mental</h1>
 			</div>
 		</div>
 		<div class="row small-5 small-centered">
@@ -26,7 +26,7 @@
 			
 			<form method="POST" action="login">
 				<div class="form-icons">
-					<h4>Boîte de login</h4>
+					<h4>Login</h4>
 					<div class="input-group">
 						<span class="input-group-label">
 							<i class="fa fa-user"></i>
