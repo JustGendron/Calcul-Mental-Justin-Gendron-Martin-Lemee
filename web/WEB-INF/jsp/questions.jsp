@@ -11,6 +11,18 @@
         <title>Questions</title>
     </head>
     <body>
-
+    <form method="POST" action="envoieReponse">
+        <div class="form-icons">
+            <h4>Login</h4>
+            <div class="input-group">
+                <p> Question </p>
+            </div>
+            <div class="input-group">
+                <input class="input-group-field" type="text" placeholder="réponse" name="form-rep"
+                       value=""/>
+            </div>
+        </div>
+        <button class="button expanded">Valider</button>
+    </form>
     </body>
 </html>

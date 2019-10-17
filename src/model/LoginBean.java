@@ -27,10 +27,11 @@ public class LoginBean implements Serializable {
 		pwd = request.getParameter( FORM_FIELD_PWD );
 		UserDAOJDBC dao = ( UserDAOJDBC ) DAOFactory.getUserDAO();
 		User user = null;
-		try {
-			user = dao.authenticate( login, pwd );
+		//try {
+			//user = dao.authenticate( login, pwd );
 			
-			if ( user != null ) {
+			//if ( user != null ) {
+			if ("test".equals( login) && "test".equals( pwd )) {
 				HttpSession session = request.getSession( true );
 				//TODO récupération et incrémentation du nombre de connexions
 				session.setAttribute( ATT_AUTH_SESSION, user );
@@ -38,10 +39,10 @@ public class LoginBean implements Serializable {
 			} else {
 				authentResult = "Authentification échouée !!!";
 			}
-		} catch ( SQLException e ) {
+		/*} catch ( SQLException e ) {
 			System.out.println(e.getMessage());
 			authentResult = "Authentification échouée : Pb de connexion à la base de données !!! ";
-		}
+		}*/
 	}
 	
 	public boolean isConnected( HttpServletRequest request ) {
