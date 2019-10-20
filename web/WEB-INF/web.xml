@@ -38,6 +38,6 @@
 	</jsp-config>
 	
 	<welcome-file-list>
-		<welcome-file>start</welcome-file>
+		<welcome-file>login</welcome-file>
 	</welcome-file-list>
 </web-app>
