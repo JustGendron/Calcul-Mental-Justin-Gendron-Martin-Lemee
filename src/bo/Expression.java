@@ -8,7 +8,7 @@ public class Expression implements Serializable {
     public Expression() { generateExpression(); }
 
 
-    public String generateExpression() {
+    public Stack generateExpression() {
 
         Random r = new Random();
         String operator = "?";
@@ -36,13 +36,17 @@ public class Expression implements Serializable {
                     break;
             }
         }
-
-        for (int i=0; i<=5; i++){
+       /* for (int i=0; i<=5; i++){
             stackE.pop();
             System.out.println("Ma stack + pop " + i + " : " + stackE);
-        }
-        System.out.println("Ma stack finale : " + stackE);
+        } */
+        System.out.println("Ma stack : " + stackE);
+        calculExpression(stackE);
+        return stackE;
+    }
 
-        return null;
+    public void calculExpression(Stack<String> stack ) {
+        System.out.println("Stack dans calcul :" + stack);
+
     }
 }

@@ -6,7 +6,11 @@ public class Operateur implements Serializable {
 
     public Operateur() { }
 
-    public boolean typeOperateur() {
+    public boolean typeOperateurBinaire() {
+        return false;
+    }
+
+    public boolean typeOperateurUnaire() {
         return false;
     }
 }
