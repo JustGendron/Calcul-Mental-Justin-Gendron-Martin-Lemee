@@ -36,17 +36,30 @@ public class Expression implements Serializable {
                     break;
             }
         }
-       /* for (int i=0; i<=5; i++){
-            stackE.pop();
-            System.out.println("Ma stack + pop " + i + " : " + stackE);
-        } */
+
         System.out.println("Ma stack : " + stackE);
         calculExpression(stackE);
+        String stackTab;
+        stackTab = stackE.get(0) + stackE.get(1) + stackE.get(2) + stackE.get(3) + stackE.get(4);
+        System.out.println(stackTab);
         return stackE;
     }
 
-    public void calculExpression(Stack<String> stack ) {
-        System.out.println("Stack dans calcul :" + stack);
+    public void calculExpression(Stack<String> stackE ) {
+        int stackInt;
+        stackE.pop();
+        System.out.println("Stack dans calcul :" + stackE);
+       /* for (int i=0; i<=5; i++){
+            System.out.println("=== Avant pop === " );
+            stackTab = stackE.peek();
+            stackInt = Integer.parseInt(stackTab) ;
+            stackE.pop();
+            System.out.println("Stack apres pop : " + stackE.get(3));
+        }*/
+       //stackInt = Integer.parseInt(stackE.get(0)) + Integer.parseInt(stackE.get(1));
+
+
+
 
     }
 }
