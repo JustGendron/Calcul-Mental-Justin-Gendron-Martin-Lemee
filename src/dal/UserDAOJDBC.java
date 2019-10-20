@@ -26,8 +26,9 @@ public class UserDAOJDBC extends DataAccessObjectJDBC<User> {
 	public User authenticate( String login, String password ) throws SQLException {
 		
 		User user = null;
+
 		try ( Connection connection = DriverManager.getConnection( dbUrl, dbLogin, dbPwd );
-			  PreparedStatement ps = connection.prepareStatement(AUTHENT_QUERY) ) {
+			  PreparedStatement ps = connection.prepareStatement(AUTHENT_QUERY, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE) ) {
 			ps.setString( 1, login );
 			ps.setString( 2, password );
 			try ( ResultSet rs = ps.executeQuery() ) {

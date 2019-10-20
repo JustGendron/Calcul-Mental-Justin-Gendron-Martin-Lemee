@@ -14,15 +14,15 @@
 	</context-param>
 	<context-param>
 		<param-name>DB_URL</param-name>
-		<param-value>jdbc:mysql://localhost:3306/epsi-b3-19-20?serverTimezone=UTC</param-value>
+		<param-value>jdbc:mysql://localhost:3306/calcul-mental?serverTimezone=UTC</param-value>
 	</context-param>
 	<context-param>
 		<param-name>DB_LOGIN</param-name>
-		<param-value>sega</param-value>
+		<param-value>root</param-value>
 	</context-param>
 	<context-param>
 		<param-name>DB_PWD</param-name>
-		<param-value>sylla</param-value>
+		<param-value></param-value>
 	</context-param>
 	
 	<session-config>
@@ -38,6 +38,6 @@
 	</jsp-config>
 	
 	<welcome-file-list>
-		<welcome-file>persons</welcome-file>
+		<welcome-file>start</welcome-file>
 	</welcome-file-list>
 </web-app>
