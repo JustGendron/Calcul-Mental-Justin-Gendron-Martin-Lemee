@@ -10,7 +10,7 @@ public class DemoHeaderFilter implements Filter {
 	@Override
 	public void doFilter( ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain ) throws IOException, ServletException {
 		
-		((HttpServletResponse)servletResponse).setHeader( "x-demo", "salary" );
+		((HttpServletResponse)servletResponse).setHeader( "x-demo", "questions" );
 		filterChain.doFilter( servletRequest, servletResponse );
 	}
 }
