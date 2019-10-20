@@ -34,14 +34,14 @@ public class Expression implements Serializable {
                     operator = "*";
                     stackE.push(operator);
                     break;
-
             }
         }
 
-        for (int i=0; i<=2; i++){
-            
+        for (int i=0; i<=5; i++){
+            stackE.pop();
+            System.out.println("Ma stack + pop " + i + " : " + stackE);
         }
-        System.out.println("Ma stack : " + stackE);
+        System.out.println("Ma stack finale : " + stackE);
 
         return null;
     }
