@@ -1,6 +1,6 @@
 package controller;
 
-
+import bo.Score;
 import model.ScoreBean;
 
 import javax.servlet.ServletException;
@@ -12,34 +12,22 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
-@WebServlet( urlPatterns = {"/start"} )
 
+@WebServlet( urlPatterns = {"/start"})
 public class ScoreController extends HttpServlet {
 
-    private static final String PAGE_START_JSP = "/WEB-INF/jsp/start.jsp";
-    private static final String PAGE_HOME_JSP = "/start";
+    private static final String PAGE_LIST_JSP = "/WEB-INF/jsp/start.jsp";
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-
-
-        ScoreBean model = (ScoreBean) request.getAttribute("scoreBean");
-        if ( model != null ) {
-            response.sendRedirect( request.getContextPath()+PAGE_START_JSP );
-        } else {
-            request.getRequestDispatcher( PAGE_HOME_JSP ).forward( request, response );
-        }
+    public ScoreController() {
     }
 
     @Override
-    protected void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+    protected void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 
-        ScoreBean model = new ScoreBean();
-        model.allScore();
-        request.setAttribute( "scoreBean", model );
-        doGet( request, response );
+        HttpSession session = request.getSession( true );
+        session.setAttribute( "scores", ScoreBean.allScore());
+        request.getRequestDispatcher( PAGE_LIST_JSP ).forward( request, response );
+       // response.sendRedirect( request.getContextPath()+PAGE_LIST_JSP );
     }
-
 }

@@ -18,6 +18,19 @@
 			</div>
 		</div>
 		<div class="row small-8 small-centered">
+			<c:forEach var="person" items="${ sessionScope.persons }" varStatus="status">
+				<tr>
+					<td>${person.name}</td>
+					<td>${person.email}</td>
+					<td>${person.salary}</td>
+					<td class="text-center">
+						<a class="button" href="<c:url value="/persons?action=details&id=${status.index}" />"><i
+								class="fa fa-edit"></i></a>
+						<a class="button alert delete-link" data-id-to-del="${status.index}"
+						   href="javascript:void(0);"><i class="fa fa-user-times"></i></a>
+					</td>
+				</tr>
+			</c:forEach>
 
 						<c:forEach items="${scoreBean.allScore()}" var="v">
 						<tr>

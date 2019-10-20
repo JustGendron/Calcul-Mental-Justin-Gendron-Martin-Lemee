@@ -17,7 +17,7 @@ public class ScoreBean implements Serializable {
     public ScoreBean() {
     }
 
-    public List<Score> allScore() {
+    public static List<Score> allScore() {
         ScoreDAOJDBC dao = (ScoreDAOJDBC) DAOFactory.getScoreDAO();
         List<Score> score = new ArrayList<>();
         try {

@@ -5,16 +5,21 @@
   Time: 15:32
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 <head>
     <title>commencer a jouer</title>
 </head>
 <body>
-<c:forEach items="${ScoreBean.allScore()}" var="v">
-    <c:out value="${v.getScore()}"></c:out>
+<div class="row small-8 small-centered">
 
-</c:forEach>
+    <c:forEach var="v" items="${ sessionScope.scores }" varStatus="status">
+        <tr>
+            <td>${v.score}</td>
+        </tr>
+    </c:forEach>
+
+</div>
 
 </body>
 </html>
